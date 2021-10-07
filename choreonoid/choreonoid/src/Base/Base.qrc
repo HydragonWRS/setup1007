@@ -1,0 +1,65 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+  <qresource prefix="/Base" >
+    
+    <file>project/layout.cnoid</file>
+
+    <file>icon/choreonoid.svg</file>
+
+    <file>icon/setup.svg</file>
+
+    <file>icon/projectsave.svg</file>
+
+    <file>icon/play.svg</file>
+    <file>icon/resume.svg</file>
+    <file>icon/stop.svg</file>
+    <file>icon/refresh.svg</file>
+
+    <file>icon/script.svg</file>
+
+    <file>icon/sceneedit.svg</file>
+    <file>icon/walkthrough.svg</file>
+    <file>icon/viewfitting.svg</file>
+    <file>icon/vertex.svg</file>
+    <file>icon/wireframe.svg</file>
+    <file>icon/solidwireframe.svg</file>
+    <file>icon/solidpolygon.svg</file>
+    <file>icon/highlight.svg</file>
+    <file>icon/visualshape.svg</file>
+    <file>icon/shapeflip.svg</file>
+    <file>icon/collisionshape.svg</file>
+    <file>icon/collisionlines.svg</file>
+    
+    <file>icon/scenecapture.svg</file>
+
+    <file>icon/record.svg</file>
+    <file>icon/record2.svg</file>
+    <file>icon/recordtarget.svg</file>
+    
+    <file>icon/graph.svg</file>
+    <file>icon/velocitygraph.svg</file>
+    <file>icon/accgraph.svg</file>
+
+    <file>icon/eraser-cursor.png</file>
+    <file>icon/adjustsize.svg</file>
+  
+    <file>shader/NoLighting.vert</file>
+    <file>shader/NoLighting.frag</file>
+    <file>shader/SolidColor.vert</file>
+    <file>shader/SolidColor.frag</file>
+    <file>shader/SolidColorEx.frag</file>
+    <file>shader/SolidPoint.vert</file>
+    <file>shader/SolidPoint.geom</file>
+    <file>shader/SolidPoint.frag</file>
+    <file>shader/ThickLine.geom</file>
+    <file>shader/Outline.vert</file>
+    <file>shader/MinLighting.vert</file>
+    <file>shader/MinLighting.frag</file>
+    <file>shader/FullLighting.vert</file>
+    <file>shader/FullLighting.geom</file>
+    <file>shader/FullLighting.frag</file>
+
+    <file alias="LICENSE">../../LICENSE</file>
+
+  </qresource>
+</RCC>

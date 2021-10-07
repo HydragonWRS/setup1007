@@ -1,0 +1,38 @@
+# Japanese translations for PACKAGE package.
+# Copyright (C) 2018 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# nakaoka <s.nakaoka@gmail.com>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-12 15:20+0900\n"
+"PO-Revision-Date: 2018-08-08 21:27+0900\n"
+"Last-Translator: nakaoka <s.nakaoka@gmail.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: WorldROSItem.cpp:60
+msgid "WorldROSItem"
+msgstr "ワールドROSアイテム"
+
+#: WorldROSItem.cpp:239
+msgid "Max clock publishing rate"
+msgstr "最大クロックパブリッシュレート"
+
+#: BodyPublisherItem.cpp:81
+msgid "BodyPublisherItem"
+msgstr "ボディパブリッシャーアイテム"
+
+#: BodyPublisherItem.cpp:211
+msgid "Max publish rate"
+msgstr "最大パブリッシュレート"
+
+#: BodyROSItem.cpp:17
+msgid "BodyROSItem"
+msgstr "ボディROSアイテム"

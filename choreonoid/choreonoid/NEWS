@@ -1,0 +1,256 @@
+Changes since 1.7.0:
+
+* Removed the typedefs with suffix 'Ptr' for the smart pointer types using std::shared_ptr
+* Introduced BodyHandler. BodyCustomizer is deprecated.
+* Introduced JointPathConfigurationHandler
+* Removed the Python plugins and bindings implemented with boost.python
+* Improve the Python bindings implemented with pybind11
+* Separated the OpenRTM modules from the main source tree
+* Separated the OpenHRP modules and GrxUI plugin from the main source tree
+* Removed ScenarioPlugin
+* Stopped supporting Qt4
+* Replaced QGLWidget with QOpenGLWidget in the implementation of SceneWidget
+* Improved the rendering engine (GLSLSceneRenderer)
+  * Fixed a bug in rendering textures
+  * Lightweight rendering mode is available
+  * Low GPU memory consumption mode is available
+* Improved the STL file loader
+* Added the Universal Robots UR robot models
+* Fixed the WRS2018 tunnel models
+* The Eigen library contained in the thirdparty directory is used by default on Windows
+* Supported Ubuntu 20.04
+* Supported Visual C++ 2019
+* Supported Clang
+* Added LocationView and LinkPositionView
+* The location of an object in the scene can be locked if necessary
+* Coordinate system for editing model positions can be selected on the location view and the link position view
+* Modified the default material colors
+* Fixed a bug in picking objects on SceneView when a high DPI display is used
+* Improved JointSliderView and rename it to JointDisplacementView
+* Added PositionView, which replaces BodyLinkView
+* The GLSL scene renderer is used by default
+* The appearance of the AGX track shoes can be specified
+* Multiple body items can be integrated into a composite body
+* Added ManipulatorPlugin
+* Introduced the environmental variable CNOID_EXPORT_PLUGIN_EXTERNAL_SYMBOLS
+* Improved the CMake configuration files for developing plugins and controllers externally
+* Fixed a bug in the calcMassMatrix function
+* Added KinematicsSimulatorItem, which replaces the kinematics mode of AISTSimulatorItem
+* Added HolderDevice, AttachmentDevice and a body can be attached to the parent body using them
+* Added DigitalIODevice, SignalIOConnectionItem, SignalIOConnectionView
+* Made the vertical axis of SceneWidget modifiable
+* Added the "export symbols" property to SimpleControllerItem
+* Improved the context menu in ItemTreeView
+* Improved the position dragger
+* The parent-child relationship betwen body items is reflected in editing body positions
+* Arranged the cmake files for building programs outside the Choreonoid source
+* The transparency of a body shown in the scene view can be modified as a property of the corresponding BodyItem
+* Improved file dialogs
+* Removed RobotAccessPlugin and Hrpsys31Plugin. The plugins are now availabe at https://github.com/choreonoid/robot-access-plugin
+* Fixed the default layout of the main window
+* Replaced LinkSelectionView with LinkDeviceListView, which can list the devices of a target body
+* Improved loading a new project when there is an existing project
+* Made the internal link attitudes same as the original model descriptions
+* Fixed the GLSL renderer to render casting shadows correctly using Radeon GPUs
+* Updated the tool bar icons
+* Implemented the vertex rendering mode and the solid-wireframe rendering mode
+* Improved the highlight style of selected / focused objects in the scene
+* Improved the API on the joint type and the joint actuation mode.
+* Made it possible to use free joints for links other than root links in the simulation by AISTSimulatorItem
+* Added the API on getting the contact states from a dynamics engine
+* Made AISTSimulator to be able to simulate models with non-root free joints
+* Supported the standard scene file format in loading and exporting body shapes
+* Supported the OBJ mesh file format in loading and exporting body shapes
+* Added BodyContactPointLoggerItem to visualize the information on the contacts against a target body during simulation
+* Added a function to write a body file
+* Added MaterialTableItem
+* Introduced snake case keys into data files
+* Improveed Undo/Redo functions with the unified edit history
+* Improveed WorldLogFileItem to provide a function to create a log playback project
+* Modified BodyTrackingCameraItem to BodySyncCameraItem and add the configuration dialog for it
+* Added RegionIntrusionDetectorItem
+* Added a function to register and switch multiple layouts of main window
+* Improved SensorVisualizerItem to support acceleration sensors and rate gyro sensors
+* Add the choreonoid-info command (experimental)
+
+Choreonoid 1.7.0 released on May 8, 2019
+========================================
+
+Changes since 1.6.0:
+
+* Supported Ubuntu 18.04
+* Supported Visual C++ 2017
+* Added MulticopterPlugin to simulate multicopters
+* Added TrafficControlPlugin to simulate bad communication environment
+* Added SubProjectItem to share project items across multiple projects
+* Added LightingItem to set a light source in the virtual world
+* Improved GLVisionSimulatorItem to support wide viewing angle range sensors and omnidirectional cameras
+* Improved AGXDynamicsPlugin to support additional physical models such as wire-like objects and breakable joints
+* Improved SensorVisualizerItem to support various sensors
+* Improved BodyTrackingCameraItem to specify its target link
+* Improved the joint slider view to support the dial interface for joint displacements
+* Improved OpenRTMPlugin
+ * The standard profile format is used to store / restore RT system configurations
+ * Multiple name servers can be used simultaneously
+ * The target nameserver can dynamically be changed by specifying the default nameserver of OpenRTM
+ * Improved the visualization in the RTS Diagram View 
+ * Introduced the manual mode of the RTC state detection
+ * Added the RTC configuration view
+* Added the OpenHRP model loader implemented using Choreonoid
+* Fix PhysXPlugin to support PhysX 3.4
+* Improved the body file format to specify textures
+* Introduced standard joystick mapping to enable different joystick devices to be used in the same way
+* Added sample robot models and their projects
+ * Aizu Spider
+ * Aizu Wheel
+ * Quadcopter
+* Added the project and model files of the tunnel disaster response and recovery challenge at World Robot Summit 2018
+* Improve the API of SimpleController
+* Introduced fmtlib as a formatting library to replace boost.format
+* Modified the wrapping rules of the pybind11 version python wrappers
+ * Modified the function names to get member object xxx to to getXxx()
+ * Member object xxx can be accessed as property xxx
+* Supported the complete out-of-source build
+* Enabled to build Choreonoid as a ROS package in the Catkin environment
+* Added CMake configuration files for the plugin development
+* Fixed pkg-config files
+* Many other minor feature improvements and bug fixes
+
+
+Choreonoid 1.6.0 released on October 31, 2017
+=============================================
+
+Changes since 1.5.0:
+
+* New model file format replacing the OpenHRP model file format
+* Mesh files of various formats including STL and Collada can be read as a part of body models
+* Introduced the concept of contact material for specifying a parameter set relating to the contact of an object pair
+* New controller API that enables a controller to specify which state variables to input and output
+* Introduced BodyIoRTCItem for directly creating an RTC for the model input / output
+* New rendering engine written in new OpenGL APIs and the GLSL shading language
+* New implementation of the Python bindings using the pybind11 library
+* Supported Python3
+* A beta version of the Lua language bindings using the Sol2 library
+* A beta version of AGXDynamicsPlugin to enable AGX Dynamics to be used as a physics engine for simulation
+* A beta version of SpringheadPlugin to enable the Springhead library to be used as a physics engine for simulation
+* A beta version of RokiPlugin to enable the Roki library to be used as a physics engine for simulation
+* Added sample models and projects
+* Many other minor feature improvements and bug fixes
+
+
+Choreonoid 1.5.0 released on July 13, 2016
+==========================================
+
+Changes since 1.4.0:
+
+* Improved the view / toolbar management system
+* Added GLVisionSimulatorItem, which simulates vision sensors such as cameras, RGBD cameras, and laser range sensors
+* Added A function to interactively apply force to an object being simulated using mouse dragging
+* Improved the stability the simulation performed by AISTSimulatorItem
+* Added PhysXPlugin, which enables nVidia PhysX to be used as a physics engine in simulation
+* Added WorldLogFileItem, which stores all the log data of a virtual world being simulated online
+* Generalization of collision detectors
+* Added BodyTrackingCameraItem, which provides a camera that automatically tracks a particular object in a virtual world
+* Added SensorVisualizerItem, which visualizes the states of sensors such as force sensors in a scene view
+* Added PointSetItem and MultiPointSetItem, which visualize point cloud data in a scene view
+* Added the Python scripting function, which enables users to control Choreonoid with a Python script
+* The source code of BalancerPlugin became a part of Choreonoid's main source code with the same license
+* Added samples
+* Supported both Qt4 and Qt5
+* The license was changed from LGPL to the MIT license
+* Other minor improvements and bug fixes
+
+
+Choreonoid 1.4.0 released on August 29, 2013
+============================================
+
+Changes since 1.3.1:
+
+* Improved the OpenRTM plugin to support simulation using RT-components
+* Added the Bullet plugin, which allows the use of the Bullet physics library as one of the simulation engines
+* Added the Media plugin for playing movie and audio files
+* Introduced a new SceneView implementation based on the pure OpenGL API
+* Supported cameras and lights defined in models on the new SceneView
+* Supported the simulation of the crawler mechanism
+* Path variables can be set and used in project files
+* Added the RIC30 robot model
+* Added sample projects for the new functions and models
+* A lot of other minor improvements
+* A lot of bug fixes
+* Refactoring the API of the Body library and plugin
+
+
+Choreonoid 1.3.1 released on August 20, 2012
+============================================
+
+Changes since 1.3.0:
+
+* Fixed a bug of reloading items
+* Fixed a bug of the execution file path detection on Mac OS X
+* Fixed a problem where a filename cannot be specified on file save dialogs on Mac OS X
+* Fixed a crash caused by ItemPropertyView
+
+
+Choreonoid 1.3.0 released on July 29, 2012
+==========================================
+
+Changes since 1.2.0:
+
+* Improved the AIST Simulator
+
+  - Improved the high-gain dynamics mode to be more accurate
+  - Made the integration methods selectable
+
+* Improved the support for Mac OS X
+
+  - Introduced relative path setting for shared libraries to make
+    the binary files relocatable on the file system
+  - Fixed the BalancerPlugin binary to be loadable
+
+* Supported Boost C++ libraries version 1.50
+* Fixed some other bugs
+
+
+Choreonoid 1.2.0 released on July 20, 2012
+==========================================
+
+Changes since 1.1.0:
+
+* Supported Mac OS X (Only tested on Lion)
+* Added a general dynamics simulation function
+* Improved the robustness of the automatic dynamic balance adjustment
+* Improved the numerical inverse kinematics to be more robust
+* SceneView's sequential image output function for creating movies
+* Online viewer function whose API is same as OpenHRP3
+* Forward kinematics dragging for slide joints on SceneView
+* Added the Corba module and CorbaPlugin which support some CORBA functions
+* Supported Clang compiler
+* Ended the use of Boost.multi_array library which caused some problems
+* Removed the Eigen library source from the source archive
+* Fixed many other bugs
+
+
+Choreonoid 1.1.0 released on December 30, 2011
+==============================================
+
+Changes since 1.0.0:
+
+* Supported internationalization
+
+ - Messages can be translated into other languages
+ - Added Japanese translations
+ - International  characters (any characters defined in Unicode) can be used
+   in data and filenames in the Linux distributions based on UTF-8
+ - Local character encoding (such as shift-jis) can be used in data and filenames in Windows
+ - Added some scripts for handling gettext files
+
+* New graphical tool bar icons
+* New application icon
+* Fixed a compile error in Visual C++ 2010
+* Fixed some other bugs
+
+
+Choreonoid 1.0.0 released on November 8, 2011
+=============================================
+
+This is the initial release version.

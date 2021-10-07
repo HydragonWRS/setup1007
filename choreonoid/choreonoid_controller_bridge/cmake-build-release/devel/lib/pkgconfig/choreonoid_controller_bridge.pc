@@ -1,0 +1,8 @@
+prefix=/home/irie/hydragon.proj/src/choreonoid/choreonoid_controller_bridge/cmake-build-release/devel
+
+Name: choreonoid_controller_bridge
+Description: Description of choreonoid_controller_bridge
+Version: 0.0.0
+Cflags: -I/home/irie/hydragon.proj/src/choreonoid/choreonoid_controller_bridge/include
+Libs: -L${prefix}/lib -lchoreonoid_controller_bridge
+Requires: roscpp std_msgs

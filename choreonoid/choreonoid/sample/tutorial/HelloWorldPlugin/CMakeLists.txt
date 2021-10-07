@@ -1,0 +1,18 @@
+if(CMAKE_PROJECT_NAME STREQUAL "Choreonoid")
+  # Build inside the Choreonoid project
+  set(target CnoidHelloWorldPlugin)
+  choreonoid_add_plugin(${target} HelloWorldPlugin.cpp)
+  target_link_libraries(${target} CnoidBase)
+else()
+  # Stand alone build
+  cmake_minimum_required(VERSION 3.1.0)
+  project(HelloWorldPlugin)
+  find_package(Choreonoid REQUIRED)
+  add_definitions(${CHOREONOID_COMPILE_DEFINITIONS})
+  include_directories(${CHOREONOID_INCLUDE_DIRS})
+  link_directories(${CHOREONOID_LIBRARY_DIRS})
+  set(target CnoidHelloWorldPlugin)
+  add_library(${target} SHARED HelloWorldPlugin.cpp)
+  target_link_libraries(${target} ${CHOREONOID_BASE_LIBRARIES})
+  install(TARGETS ${target} LIBRARY DESTINATION ${CHOREONOID_PLUGIN_DIR})
+endif()

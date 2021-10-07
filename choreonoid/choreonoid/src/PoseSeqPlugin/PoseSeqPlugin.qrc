@@ -1,0 +1,10 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+<qresource prefix="/PoseSeq" >
+
+  <file>icon/trajectory-generation.svg</file>
+  <file>icon/auto-update.svg</file>
+  <file>icon/balancer.svg</file>
+
+</qresource>
+</RCC>
